@@ -1,14 +1,21 @@
 "use client";
 
-import { Card, Button, Form, Input, Typography } from "antd";
+import { Card, Button, Form, Input, Typography, Spin } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 const { Title, Paragraph } = Typography;
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function HomePage() {
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
+
   const onFinish = () => {
-    router.push("/dashboard");
+    setLoading(true); // Mulai loading
+    setTimeout(() => {
+      router.push("/dashboard");
+      setLoading(false);
+    }, 2000);
   };
   return (
     <section className="h-full flex justify-center items-center bg-gray-50">
@@ -26,7 +33,8 @@ export default function HomePage() {
           </Form.Item>
 
           <Form.Item>
-            <Button size="large" block type="primary" htmlType="submit">
+            <Button disabled={loading} size="large" block type="primary" htmlType="submit">
+              {loading && <Spin className="mr-2" />}
               Log in
             </Button>
           </Form.Item>

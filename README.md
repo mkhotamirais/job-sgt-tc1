@@ -1,6 +1,6 @@
 # My Next.js Project with TypeScript and Ant Design
 
-This project is a Next.js application built with TypeScript and Ant Design (Antd) for UI components. Follow the steps below to set up and run the project.
+This project was created to fulfill the as signment from Company Summit Global Technology. This project is a Next.js application built with TypeScript and Ant Design (Antd) for UI components. Follow the steps below to set up and run the project.
 
 
 ## Prerequisite
